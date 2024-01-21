@@ -1,3 +1,11 @@
+/*
+ * @Author       : liqiao
+ * @Date         : 2024-01-20 17:23:26
+ * @LastEditors  : liqiao
+ * @LastEditTime : 2024-01-21 17:16:21
+ * @Description  : Do not edit
+ * @FilePath     : /accident-h5/src/apis/http.js
+ */
 import axios from "axios";
 
 const instance = axios.create({
@@ -17,9 +25,10 @@ export default (options) => {
     responseType,
   } = options;
 
-  url = `https://iot.feiyulot.com/${
-    options?.proxy ? options.proxy : gatway
-  }${url}`;
+  // url = `https://iot.feiyulot.com/${
+  //   options?.proxy ? options.proxy : gatway
+  // }${url}`;
+  url = `http://121.43.49.249:8080${url}`;
   return new Promise((res, rej) => {
     instance
       .request({
@@ -34,7 +43,7 @@ export default (options) => {
       .then(
         (data) => {
           console.log("data", data);
-          if (data.data.code === 200) {
+          if (Number(data.data.code) === 0) {
             res(data.data);
           } else {
             rej(data.data);

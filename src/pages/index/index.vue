@@ -13,7 +13,12 @@
       <div class="btn" @click="goUrl">預約咨詢服務</div>
     </div>
     <div class="bottom-round-bar">
-      <img @click="scrollToHash" class="wow fadeInDown row-down" src="@/assets/images/row_down.jpg" alt="" />
+      <img
+        @click="scrollToHash"
+        class="wow fadeInDown row-down"
+        src="@/assets/images/row_down.jpg"
+        alt=""
+      />
     </div>
     <div class="service">
       <div class="s-title">服務範圍</div>
@@ -44,13 +49,25 @@
       <div class="s-title">法律小知識</div>
     </div>
     <div class="tab-container">
-      <div @click="selectTab(0)" :class="{ active: currentShowTab === 0 }" class="tab">
+      <div
+        @click="selectTab(0)"
+        :class="{ active: currentShowTab === 0 }"
+        class="tab"
+      >
         交通意外
       </div>
-      <div @click="selectTab(1)" :class="{ active: currentShowTab === 1 }" class="tab mx-10">
+      <div
+        @click="selectTab(1)"
+        :class="{ active: currentShowTab === 1 }"
+        class="tab mx-10"
+      >
         工業傷亡
       </div>
-      <div @click="selectTab(2)" :class="{ active: currentShowTab === 2 }" class="tab">
+      <div
+        @click="selectTab(2)"
+        :class="{ active: currentShowTab === 2 }"
+        class="tab"
+      >
         客户案件分享
       </div>
     </div>
@@ -72,10 +89,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import HeaderNav from "@/components/HeaderNav.vue";
-import Menu from "@/components/MenuOverlay.vue";
-import FooterNav from "@/components/FooterNav.vue";
+import { ref } from 'vue';
+import HeaderNav from '@/components/HeaderNav.vue';
+import Menu from '@/components/MenuOverlay.vue';
+import FooterNav from '@/components/FooterNav.vue';
 import { toUpdateAccount } from '@/apis/index';
 
 const overLayShow = ref(false);
@@ -88,7 +105,7 @@ const changeShow = (val) => {
 const scrollToHash = () => {
   window.scrollTo({
     top: 600,
-    behavior: "smooth",
+    behavior: 'smooth'
   });
 };
 
@@ -103,7 +120,7 @@ const testApi = async () => {
   console.log('🚀 ~ testApi ~ res:', res);
 };
 
-const goUrl =  () => {
+const goUrl = () => {
   uni.navigateTo({
     url: '/pages/appointment/index'
   });
@@ -113,14 +130,16 @@ const goUrl =  () => {
 <style lang="less" scoped>
 // @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@200..900&display=swap");
 .top-block {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #eef8fe;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  box-sizing: border-box;
+  width: 100%;
   padding: 20px 0;
   padding-bottom: 0;
-  flex-direction: column;
-  align-items: center;
+
+  background-color: #eef8fe;
 
   .people {
     width: 250px;
@@ -130,95 +149,116 @@ const goUrl =  () => {
   .title {
     .top {
       width: 100%;
-      text-align: center;
-      font-size: 25px;
-      color: #262262;
-      font-weight: bold;
       margin: 0 auto;
       margin-top: 15px;
-      font-family: "Noto Serif HK", serif;
-      font-optical-sizing: auto;
+
+      text-align: center;
+
+      color: #262262;
+
+      font-family: 'Noto Serif HK', serif;
+      font-size: 25px;
+      font-weight: bold;
       font-style: normal;
+
+      font-optical-sizing: auto;
     }
 
     .sub {
       margin-top: 15px;
-      font-size: 16px;
+
       color: rgb(156 163 175);
+
+      font-size: 16px;
     }
   }
 
   .btn {
-    background-color: #e0eeda;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #262262;
-    padding: 15px 25px;
-    width: 75%;
+    justify-content: center;
+
     box-sizing: border-box;
-    border-radius: 10px;
+    width: 75%;
     margin-top: 20px;
-    font-family: "Noto Serif HK", serif;
-    font-optical-sizing: auto;
+    padding: 15px 25px;
+
+    color: #262262;
+    border-radius: 10px;
+    background-color: #e0eeda;
+
+    font-family: 'Noto Serif HK', serif;
     font-weight: bold;
+
+    font-optical-sizing: auto;
   }
 }
 
 .bottom-round-bar {
   position: relative;
+
+  display: flex;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   height: 80px;
+
   background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .row-down {
     position: relative;
     z-index: 1;
+
     width: 15px;
   }
 
   &::after {
-    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+
     width: 120%;
     height: 320px;
-    position: absolute;
-    left: -10%;
-    bottom: 0;
+
+    content: '';
+
     border-radius: 0 0 50% 50%;
     background-color: #eef8fe;
   }
 }
 
 .service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .s-title {
-    font-size: 20px;
-    font-family: "Noto Serif HK", serif;
-    font-optical-sizing: auto;
     color: #262262;
+
+    font-family: 'Noto Serif HK', serif;
+    font-size: 20px;
     font-weight: bold;
+
+    font-optical-sizing: auto;
   }
 }
 
 .service-box {
-  width: 100%;
-  padding: 0 15px;
   box-sizing: border-box;
+  width: 100%;
   margin-bottom: 20px;
+  padding: 0 15px;
 
   .s-item {
+    box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    box-sizing: border-box;
+
     border: 1px solid #eee;
 
     .ico {
@@ -234,72 +274,82 @@ const goUrl =  () => {
 
     .body-t {
       padding: 10px;
+
       font-size: 14px;
     }
   }
 }
 
 .tab-container {
-  width: 100%;
-  padding: 0 15px;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
   margin-bottom: 20px;
+  padding: 0 15px;
 
   .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 130px;
     height: 40px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     cursor: pointer;
+
+    border-radius: 8px;
   }
 
   .active {
-    background-color: #fcb04c;
     color: #fff;
+    background-color: #fcb04c;
   }
 }
 
 .swiper-box {
-  width: 100%;
-  padding: 0 15px;
   box-sizing: border-box;
+  width: 100%;
   margin-bottom: 20px;
+  padding: 0 15px;
 
   .content-box {
-    width: 100%;
-    border: 1px solid #eee;
     box-sizing: border-box;
+    width: 100%;
+
+    border: 1px solid #eee;
 
     .img-top {
       width: 100%;
+
       border-radius: 5px;
     }
 
     .sub-text {
       padding: 15px;
+
       font-size: 14px;
 
       .top-title {
+        margin-bottom: 5px;
+
         font-size: 16px;
         font-weight: bold;
-        margin-bottom: 5px;
       }
     }
   }
 }
 
 .more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #7bb1eb;
   margin-bottom: 10px;
+
+  color: #7bb1eb;
 }
 </style>
-

@@ -9,6 +9,34 @@
       }
     },
     {
+      "path": "pages/service/index",
+      "style": {
+        "navigationBarTitleText": "服务范围-交通意外伤亡及工业伤亡支援中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/legal/index",
+      "style": {
+        "navigationBarTitleText": "法律小知识-交通意外伤亡及工业伤亡支援中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/about/index",
+      "style": {
+        "navigationBarTitleText": "关于中心-交通意外伤亡及工业伤亡支援中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/contact/index",
+      "style": {
+        "navigationBarTitleText": "联系我们-交通意外伤亡及工业伤亡支援中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/appointment/index",
       "style": {
         "navigationBarTitleText": "预约咨询-交通意外伤亡及工业伤亡支援中心",
