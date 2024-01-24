@@ -23,6 +23,13 @@
       }
     },
     {
+      "path": "pages/legal/detail",
+      "style": {
+        "navigationBarTitleText": "法律小知识-交通意外伤亡及工业伤亡支援中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/about/index",
       "style": {
         "navigationBarTitleText": "关于中心-交通意外伤亡及工业伤亡支援中心",

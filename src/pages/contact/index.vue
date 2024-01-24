@@ -2,7 +2,7 @@
  * @Author       : liqiao
  * @Date         : 2024-01-21 21:11:21
  * @LastEditors  : liqiao
- * @LastEditTime : 2024-01-21 22:08:16
+ * @LastEditTime : 2024-01-23 23:10:48
  * @Description  : Do not edit
  * @FilePath     : /accident-h5/src/pages/contact/index.vue
 -->
@@ -57,6 +57,11 @@ import { onShow } from '@dcloudio/uni-app';
 const overLayShow = ref(false);
 
 onShow(() => {});
+const changeShow = (val) => {
+  if (val) {
+    overLayShow.value = true;
+  }
+};
 </script>
 
 <style lang="less" scoped>
